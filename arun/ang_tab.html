@@ -1,0 +1,95 @@
+<html ng-app>
+
+	<head>
+	
+		<script src="jquery-1.11.2.min.js"></script>
+		
+		<script src="angular.min.js"></script>
+		
+		<link rel="stylesheet" href="bootstrap.css"/>
+		
+		<script src="bootstrap.js"></script>
+		
+		<style>
+		
+			.table-bordered {
+			
+				border: 1px solid steelblue;
+				
+			}
+			
+			table.table-striped {
+			
+				background-color: steelblue;
+				
+			}
+			
+			input, button, select, textarea {
+				
+				font-family: inherit;
+				
+				font-size: inherit;
+				
+				line-height: inherit;
+				
+				color: silver;
+				
+			}
+		
+		</style>
+	
+	</head>
+	
+	<body>
+		
+		<div id="searchArea" class="row" style="width:650px;">
+		
+			<div class="col-md-6 pull-right">
+	
+				<label>Search:</label><input type="text" ng-model="search"/>
+			
+			</div>
+		
+		</div>
+		
+		<div class="row">
+		
+			<div class="col-md-5" >
+			
+				<table class="table table-striped table-bordered table-clickable">
+				
+					<thead>
+					
+						<th>ID</th>
+						
+						<th>Name</th>
+					
+					</thead>
+					
+					<tbody ng-controller="PersonSearchController">
+					
+					<tr ng-repeat="person in persons|filter:search"><td>{{person.id}}</td><td>{{person.firstname+' '+person.lastname}}</td></tr>
+					
+					</tbody>
+				
+				</table>
+				
+			</div>
+		
+		</div>
+		
+		<script>
+			
+			function PersonSearchController($scope)
+			{
+			
+				$scope.persons=[{id:'439219',firstname:'Arun Kumar',lastname:'Sowmyanarayanan'},{id:'439233',firstname:'Shankar',lastname:'Subburaman'},
+				{id:'439142',firstname:'Kanchan Kumar',lastname:'P'},{id:'438898',firstname:'Sruthi',lastname:'vasudevan'}];
+			
+			}
+	
+		</script>
+	
+	</body>
+
+</html>

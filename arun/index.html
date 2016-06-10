@@ -1,0 +1,32 @@
+<html>
+
+	<head>
+
+		<script src="angular.min.js"></script>
+		
+		<script src="angular-route.min.js"></script>
+		
+		<script>
+		
+angular.module("myapp",[]).config(function($routeProvider){
+			
+				
+				
+				$routeProvider.when("/",{templateUrl:"content.html"});
+			
+			});
+		</script>
+	
+	</head>
+	
+	<body>
+	
+	<div ng-app="myapp">
+	
+		<ng-view> </ng-view>
+	
+	</div>
+	
+	</body>
+	
+</html>

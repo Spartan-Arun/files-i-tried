@@ -1,0 +1,185 @@
+<html>
+
+	<head>
+	
+		<script src="jquery-1.11.2.min.js"></script>
+		
+		<script src="trendchart.js"></script>
+
+	</head>
+
+	<body>
+	
+		<svg height="400" width="600">
+		
+		
+			<g id="graphBody">
+			
+				<rect x="0" y="0" width="600" height="400" stroke="gray" fill="rgb(255,255,255)" fill-opacity="0.6"></rect>
+				
+			
+			</g>
+			
+			<g id="caption">
+			
+				<text font-size="20" stroke="black" stroke-width="0.6" style="text-shadow:2px 2px 1px gray" x="250" y="20">Trend-Line Chart for Profits/Quarter</text>
+			
+			</g>
+		
+			<g id="yAxis">
+				
+				<line x1="100" y1="0" x2="100" y2="300" stroke="blue" stroke-width="2"></line>
+				
+				<text font-size="15" x="35" y="150" fill="black" style="text-shadow:2px 2px 1px gray" transform="rotate(270 35,150)">Dollars</text>
+				
+				<line x1="90" y1="250" x2="100" y2="250" stroke="black"/>
+				
+				<text font-size="15" x="60" y="255" fill="red">$10</text>
+				
+				<line x1="90" y1="150" x2="100" y2="150" stroke="black"/>
+				
+				<text font-size="15" x="60" y="155" fill="red">$50</text>
+				
+				<line x1="90" y1="50" x2="100" y2="50" stroke="black"/>
+				
+				<text font-size="15" x="60" y="55" fill="red">$100</text>
+				
+			</g>
+			
+			<g id="xAxis">
+			
+				<line x1="100" y1="300" x2="600" y2="300" stroke="brown" stroke-width="2"></line>
+				
+				<text font-size="15" x="95" y="315" fill="red">0</text>
+				
+				<line x1="200" y1="300" x2="200" y2="310" stroke="black"/>
+				
+				<text font-size="15" x="196" y="325" fill="red">1</text>
+				
+				<line x1="300" y1="300" x2="300" y2="310" stroke="black"/>
+				
+				<text font-size="15" x="296" y="325" fill="red">2</text>
+				
+				<line x1="400" y1="300" x2="400" y2="310" stroke="black"/>
+				
+				<text font-size="15" x="396" y="325" fill="red">3</text>
+				
+				<line x1="500" y1="300" x2="500" y2="310" stroke="black"/>
+				
+				<text font-size="15" x="496" y="325" fill="red">4</text>
+				
+				<text fornt-size="25" x="300" y="350" style="text-shadow:2px 2px 1px gray" fill="black">Quarters</text>
+				
+			</g>
+			
+			<g id="grid">
+			
+				<line x1="100" y1="0" x2="600" y2="0" stroke="gray"/>
+				
+				<line x1="600" y1="0" x2="600" y2="300" stroke="gray"/>
+				
+				<line x1="100" y1="50" x2="600" y2="50" stroke-width="0.4" stroke="gray"/>
+				
+				<line x1="100" y1="100" x2="600" y2="100" stroke-width="0.4" stroke="gray"/>
+			
+				<line x1="100" y1="150" x2="600" y2="150" stroke-width="0.4" stroke="gray"/>
+				
+				<line x1="100" y1="200" x2="600" y2="200" stroke-width="0.4" stroke="gray"/>
+				
+				<line x1="100" y1="250" x2="600" y2="250" stroke-width="0.4" stroke="gray"/>
+				
+				<line x1="200" y1="0" x2="200" y2="300" stroke-width="0.4" stroke="gray"/>
+				
+				<line x1="300" y1="0" x2="300" y2="300" stroke-width="0.4" stroke="gray"/>
+				
+				<line x1="400" y1="0" x2="400" y2="300" stroke-width="0.4" stroke="gray"/>
+				
+				<line x1="500" y1="0" x2="500" y2="300" stroke-width="0.4" stroke="gray"/>
+				
+			</g>
+			
+			<g id="trendlines">	
+			
+				<line id="trend1" x1="100" y1="300" x2="200" y2="250" stroke-width="1" stroke="rgb(32,178,170)"/>
+				
+				<line id="trend2" x1="200" y1="250" x2="300" y2="50" stroke-width="1" stroke="rgb(32,178,170)"/>
+				
+				<line id="trend3" x1="300" y1="50" x2="400" y2="150" stroke-width="1" stroke="rgb(32,178,170)"/>
+				
+				<line id="trend4" x1="400" y1="150" x2="500" y2="150" stroke-width="1" stroke="rgb(32,178,170)"/>
+			
+			</g>
+			
+			<g id="trendpoints">
+			
+				<circle id="zero" cx="100" cy="300" r="2" fill="black"/>
+			
+				<circle id="first" cx="200" cy="250" r="2" fill="black"/>
+				
+				<circle id="second" cx="300" cy="50" r="2" fill="black"/>
+				
+				<circle id="third" cx="400" cy="150" r="2" fill="black"/>
+				
+				<circle id="fourth" cx="500" cy="150" r="2" fill="black"/>
+			
+			</g>
+			
+			<g id="tootltips">
+			
+				<g id="tip0">
+				
+					<circle id="zero" cx="100" cy="300" r="6" fill="white" stroke="white"/>
+					
+					<rect x="105" y="305" width="100" height="20" ry="10" fill="white" stroke="orange" troke-opacity="0.4" fill-opacity="0.4"/>
+					
+					<text x="106" y="320" stroke="blue" stroke-opacity="0.4">Zeroth Quarter</text>
+				
+				</g>
+				
+				<g id="tip1">
+				
+					<circle id="first" cx="200" cy="250" r="6" fill="white" stroke="white"/>
+					
+					<rect x="205" y="255" width="240" height="20" ry="10" fill="white" stroke="orange" stroke-opacity="0.4" fill-opacity="0.4"/>
+					
+					<text x="215" y="270" stroke="blue" stroke-opacity="0.4">First Quarter income is 10 Dollars</text>
+				
+				</g>
+				
+				<g id="tip2">
+				
+					<circle id="third" cx="300" cy="50" r="6" fill="white" stroke="white"/>
+					
+					<rect x="305" y="55" width="270" height="20" ry="10" fill="white" stroke="orange" stroke-opacity="0.4" fill-opacity="0.4"/>
+					
+					<text x="320" y="70" stroke="blue" stroke-opacity="0.4">Second Quarter income is 100 Dollars</text>
+				
+				</g>
+				
+				<g id="tip3">
+				
+					<circle id="third" cx="400" cy="150" r="6" fill="white" stroke="white"/>
+					
+					<rect x="310" y="160" width="250" height="20" ry="10" fill="white" stroke="orange" stroke-opacity="0.4" fill-opacity="0.4"/>
+					
+					<text x="320" y="175" stroke="blue" stroke-opacity="0.4">Third Quarter income is 50 Dollars</text>
+				
+				</g>
+				
+				<g id="tip4">
+				
+					<circle id="third" cx="500" cy="150" r="6" fill="white" stroke="white"/>
+					
+					<rect x="310" y="160" width="250" height="20" ry="10" fill="white" stroke="orange" stroke-opacity="0.4" fill-opacity="0.4"/>
+					
+					<text x="320" y="175" stroke="blue" stroke-opacity="0.4">Fourth Quarter income is 50 Dollars</text>
+				
+				</g>
+			
+			</g>
+			
+		</svg>
+	
+	</body>
+	
+</html>
