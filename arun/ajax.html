@@ -1,0 +1,69 @@
+<html>
+
+	<head>
+	
+	
+		<script src="jquery-1.11.2.min.js"></script>
+		
+		<link rel="stylesheet" href="bootstrap.css"/>
+		
+		<script src="bootstrap.js"></script>
+		
+		<script>
+		
+			$(document).ready(function(){
+			
+				$.ajax({url:"json.json",
+				
+					dataType:"json",
+			
+					success:function(data){
+					
+						var tab="<table class='table table-condensed table-hover table-striped table-bordered'><thead><tr><th>ID</th><th>NAME</th></tr></thead><tbody>";
+				
+						$.each(data,function(i,value){
+							
+							for(var i=0;i<value.length;i++)
+							{
+								tab+="<tr><td>"+value[i].id+"</td><td>"+value[i].name+"</td></tr>";
+							}
+						
+						});
+						
+						tab+="</tbody></table>";
+						
+						$("#content").append(tab);
+					
+					}
+				
+				});
+			
+			});
+		
+		</script>
+		
+		<style>	
+
+			div{
+			
+				width:400px;
+			
+			}
+			
+			thead{
+			
+				background-color:#6BABC6;
+			
+			}
+		
+		</style>
+	
+	</head>
+	
+	<body>
+	
+		<div id="content" class="center-block"></div>
+	
+	</body>
+
+</html>

@@ -1,0 +1,189 @@
+<html>
+
+<style>
+
+#scene{
+
+width:200px;
+
+height:200px;
+
+perspective:400px;
+
+margin-left:500px;
+
+margin-top:250px;
+
+display:inline-block;
+
+}
+
+#container
+{
+
+width:200px;
+
+height:200px;
+
+transform-style:preserve-3d;
+
+position:relative;
+
+-webkit-animation:cube 10s infinite;
+
+}
+
+#face1
+{
+
+width:200px;
+
+height:200px;
+
+position:absolute;
+
+box-shadow:inset 0px 0px 10px black;
+
+-webkit-transform:translate3d(0,0,100px);
+
+opacity:0.5;
+
+}
+#face2
+{
+
+width:200px;
+
+height:200px;
+
+box-shadow:inset 0px 0px 10px black;
+
+position:absolute;
+
+-webkit-transform:rotateY(180deg) translate3d(0,0,100px);
+
+opacity:0.5;
+
+}
+#face3
+{
+
+width:200px;
+
+height:200px;
+
+box-shadow:inset 0px 0px 10px black;
+
+position:absolute;
+
+-webkit-transform:rotateX(90deg) translate3d(0,0,100px);
+
+
+opacity:0.5;
+
+}
+#face4
+{
+
+width:200px;
+
+height:200px;
+
+box-shadow:inset 0px 0px 10px black;
+
+position:absolute;
+
+-webkit-transform:rotateX(-90deg) translate3d(0,0,100px);
+
+opacity:0.5;
+
+}
+#face5
+{
+
+width:200px;
+
+height:200px;
+
+box-shadow:inset 0px 0px 10px black;
+
+position:absolute;
+
+-webkit-transform:rotateY(90deg) translate3d(0,0,100px);
+
+opacity:0.5;
+}
+#face6
+{
+
+width:200px;
+
+height:200px;
+
+box-shadow:inset 0px 0px 10px black;
+
+position:absolute;
+
+-webkit-transform:rotateY(-90deg) translate3d(0,0,100px);
+
+opacity:0.5;
+
+}
+
+@-webkit-keyframes cube
+{
+
+0%{-webkit-transform:rotateY(0deg);}
+
+15%{-webkit-transform:rotateY(180deg);}
+
+30%{-webkit-transform:rotateX(-90deg);}
+
+45%{-webkit-transform:rotateX(90deg);}
+
+60%{-webkit-transform:rotateY(90deg) rotateY(180deg);}
+
+75%{-webkit-transform:rotateY(90deg);}
+
+90%{-webkit-transform:rotateY(90deg);}
+
+}
+</style>
+
+<body>
+
+<div id="scene">
+
+<div id="container">
+
+<div id="face1">
+<h1 style="margin-top:50%;margin-left:50%">1</h1>
+</div>
+
+<div id="face2">
+<h1 style="margin-top:50%;margin-left:50%">2</h1>
+</div>
+
+<div id="face3">
+<h1 style="margin-top:50%;margin-left:50%">3</h1>
+</div>
+
+<div id="face4">
+<h1 style="margin-top:50%;margin-left:50%">4</h1>
+</div>
+
+<div id="face5">
+<h1 style="margin-top:50%;margin-left:50%">5</h1>
+</div>
+
+<div id="face6">
+<h1 style="margin-top:50%;margin-left:50%">6</h1>
+</div>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
