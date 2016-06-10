@@ -1,0 +1,15 @@
+<html>
+<head>
+<script>
+
+function blured(event)
+{
+ document.getElementById("container").text=this.text;
+}  
+</script>
+</head>
+<body>
+<input type='text' onblur="blured(this)"/>
+<input type='text' onblur="blured(this)"/>
+<div id="container">
+</div>
