@@ -1,0 +1,55 @@
+<html >
+
+	<head>
+	
+		<script src="jquery-1.11.2.min.js"></script>
+		
+		<script src="angular.js"></script>
+		
+		<script src="angular-route.js"></script>
+		
+		<script src="app.js"></script>
+		
+		<style>
+		
+			a{
+			
+				border-top-left-radius:15px;
+				
+				border-bottom-right-radius:15px;
+				
+				background:linear-gradient(rgba(0,102,102,0.6),rgba(0,102,102,0.6));
+				
+				color:white;
+				
+				text-decoration:none;
+				
+				border-color:#006666;
+				
+				border:solid 1px;
+				
+				font-size:30px;
+			
+			}
+			
+			a:hover{
+			
+				box-shadow:0px 0px 10px #006666;
+				
+				border-color:#14ad80
+			
+			}
+		
+		</style>
+	
+	</head>
+	
+	<body ng-app="sample">
+	
+		<a href="#home">Home</a> <a href="#dummy">Dummy</a>
+		
+		<div ng-view></div>
+	
+	</body>
+
+</html>
