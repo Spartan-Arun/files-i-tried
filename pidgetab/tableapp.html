@@ -1,0 +1,20 @@
+<html>
+<head>
+<script src="jquery-1.11.2.min.js"></script>
+<link rel="stylesheet" href="bootstrap.css"/>
+<script src="bootstrap.js"></script>
+<script src="pidgetab.js"></script>
+<script>
+
+$(document).ready(function(){
+$("#container").PidgeTab({columns:"['AssociateID','FirstName','MiddleName','LastName','MailID']",dataSet:"[['439219','Arun Kumar',' ','Sowmyanarayanan','ArunKumar.SowmyNarayanan@cognizant.com'],['439233','Shankar',' ','Subburaman','Shankar.Subburaman@cognizant.com'],['432523','Sourabh','','Bhisht','Sourabh.Bhisht2@cognizant.com'],['439218','Andrew','Reuben','I','AndrewReuben.I@cognizant.com'],['439982','Prithvi','','Uppalapatti','PrithviRaju.Uppalapatti@cognizant.com'],['439142','Kanchan Kumar','','P','KanchanKumar.P@cognizant.com']]",bgColor:"70,130,180",textColor:"white"});
+
+$("[data-toggle='tooltip']").tooltip();
+});
+
+</script>
+</head>
+<body style="background-image:url('background.jpg');">
+<div ng-app id="container" class="col-md-8"></div>
+</body>
+</html>
