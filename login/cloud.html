@@ -1,0 +1,138 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="bootstrap.css"/>
+<script src="bootstrap.js"></script>
+<link rel="stylesheet" href="glyph.css">
+<link rel="stylesheet" href="login.css">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="icon.css">
+<script src="jquery-1.11.2.min.js"></script>
+<script>
+$(document).ready(function(){
+$("#login").hide();
+$("#rocket").css({"-webkit-transition":'transform 5s ease-out'});
+$("#rocket").css({"-webkit-transform":'translate(450px) rotate(45deg)'});
+$("#login").fadeIn(10000);
+$("#uname").focus(function(){
+$("#rocket").css({"margin-top":"-550px"});
+});
+$("#upass").focus(function(){
+$("#rocket").css({"margin-top":"-500px"});
+});
+$("#upass").blur(function(){
+$("#rocket").css({"margin-top":"-550px"});
+});
+$("input").hover(function(){
+$(this).tooltip('show');
+});
+});
+</script>
+<style>
+body
+{
+background:#ccc;
+background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFIfRs_Evgsgly7r9Rbc5ANazsQ9yrbxFCuXfbqmTKsWkebDjP');
+ overflow:hidden;
+}
+/*cloud*/
+#cloud {
+	width: 350px; height: 120px;
+	
+	background: #f2f9fe;
+	background: linear-gradient(top, #f2f9fe 5%, #d6f0fd 100%);
+	background: -webkit-linear-gradient(top, #f2f9fe 5%, #d6f0fd 100%);
+	background: -moz-linear-gradient(top, #f2f9fe 5%, #d6f0fd 100%);
+	background: -ms-linear-gradient(top, #f2f9fe 5%, #d6f0fd 100%);
+	background: -o-linear-gradient(top, #f2f9fe 5%, #d6f0fd 100%);
+	
+	border-radius: 100px;
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+	
+	position: relative;
+	margin: 120px auto 20px;
+opacity:0.7;
+}
+
+#cloud:after, #cloud:before {
+	content: '';
+	position: absolute;
+	background: #f2f9fe;
+	z-index: -1
+}
+
+#cloud:after {
+	width: 100px; height: 100px;
+	top: -50px; left: 50px;
+	
+	border-radius: 100px;
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+}
+
+#cloud:before {
+	width: 180px; height: 180px;
+	top: -90px; right: 50px;
+	
+	border-radius: 200px;
+	-webkit-border-radius: 200px;
+	-moz-border-radius: 200px;
+}
+
+/*animation*/
+.anim
+{
+-webkit-animation:blow 40s ease-out;
+-webkit-animation-iteration-count:infinite;
+}
+@-webkit-keyframes blow
+{
+0%{-webkit-transform:translate(20px);}
+25%{-webkit-transform:translate(40px);}
+50%{-webkit-transform:translate(60px);}
+75%{-webkit-transform:translate(100px);}
+100%{-webkit-transform:translate(-80px);}
+}
+/*moon*/
+#moon
+{
+position:absolute;
+background:#e0dad0;
+box-shadow: -6px 2px 114px 23px rgba(46,74,117,1);
+border-radius:100%;
+width:100px;
+height:100px;
+margin-left:1000px;
+}
+</style>
+</head>
+<body>
+<div id="cloud" class="anim" style="float:left;"></div>
+
+<div id="cloud" class="anim"></div>
+
+<div id="cloud" class="anim" style="float:right;"></div>
+
+<div id="moon"></div>
+<form class="form" id="login">
+<h1 style="color:white;text-align:center;"> LOG IN</h1>
+<div class="left-inner-addon">
+<i class="glyphicon glyphicon-user"></i><input type="email" id="uname" class="form-control" placeholder="User Name" autofocus="true" required="true"/>
+</div></br>
+<div class="left-inner-addon">
+<i class="glyphicon glyphicon-lock"></i><input type="password" id="upass" class="form-control" placeholder="password" required="true"/>
+</div>
+</br>
+<div class="form-group">
+<center><button type="submit" class="btn btn-primary btn-success">Login <span class="glyphicon glyphicon-arrow-right"></span></button></center>
+</div>
+<h4 style="color:white;"> Sign in:</h4>
+<a href="www.facebook.com" class="btn btn-info btn-small fb" style="margin-left:10px;"></a>
+<a href="www.twitter.com" class="btn btn-info btn-small tweet" style="margin-left:10px;"></a>
+<a href="plus.google.com" class="btn btn-info btn-small google" style="margin-left:10px;"></a>
+<a href="www.linkein.com" class="btn btn-info btn-small in" style="margin-left:10px;"></a>
+</form>
+<img id="rocket" class="rocket" src="rocket_burned.png" style="margin-top:-550px; width:70px; height:70px;-webkit-transform:rotate(45deg);"/>
+</body>
+</html>
